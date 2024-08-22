@@ -1,0 +1,29 @@
+.parentDiv{
+    display: flex;
+}
+.TotalDiv{
+    display: flex;
+}
+.mainDiv{
+    border: 3px solid #ddd;
+    width: 24%;
+    height: 40%;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.photo_name{
+    display: flex;
+    align-items: end;
+    padding-bottom: 10px;
+    }
+.photo_name b{
+    font-size: 25px;
+}
+.personalInfo > span{
+    display: flex;
+}
+p{
+    margin: 0;
+}
