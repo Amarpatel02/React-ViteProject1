@@ -5,45 +5,65 @@
 
 import Props, {UnOrder} from "./props/props.jsx"
 import { recipes } from "./data/data.js"
+
+import ChildProp from "./childProps/childProps.jsx"
 import {toast,ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 
 // import {Card} from "./cards/card.jsx"
 
 
-
-
 function Calling(){
-   let toastFunction=()=>{
-      toast("Basic toastify")
-      toast.info("Info Notification")
-      toast.success("success Notification")
-      toast.warning("waring Notification")
-      toast.error("error Notification");
-
-
-      // toast("Basic hello",{position: toast. POSITION })
-      // toast.info("Info Notification")
-      // toast.success("success Notification")
-      // toast.warning("waring Notification")
-      // toast.error("error Notification")
-
-      toast("Basic hello", { position: toast.POSITION.TOP_RIGHT });
-      toast.info("Info Notification", { position: toast.POSITION.BOTTOM_LEFT });
-      toast.success("Success Notification", { position: toast.POSITION.TOP_CENTER });
-      toast.warning("Warning Notification", { position: toast.POSITION.BOTTOM_RIGHT });
-      toast.error("Error Notification", { position: toast.POSITION.BOTTOM_CENTER });
-
-
-   }
    return(
       <>
-      <button onClick={toastFunction}>Toastify</button>
-      <ToastContainer></ToastContainer>
+      <ChildProp text="Amar">
+         Hey Hello How are you
+      </ChildProp>
 
+      <ChildProp text="Ranjith">
+         <h3>Hey Hello How are you</h3>
+      </ChildProp>
+
+      <ChildProp text="Sukumar">
+         Hey Hello How are you
+      </ChildProp>
       </>
    )
+
 }
+
+
+// function Calling(){
+//    let toastFunction=()=>{
+//       toast("Basic toastify")
+//       toast.info("Info Notification")
+//       toast.success("success Notification")
+//       toast.warning("waring Notification")
+//       toast.error("error Notification");
+
+
+//       // toast("Basic hello",{position: toast. POSITION })
+//       // toast.info("Info Notification")
+//       // toast.success("success Notification")
+//       // toast.warning("waring Notification")
+//       // toast.error("error Notification")
+
+//       toast("Basic hello", { position: toast.POSITION.TOP_RIGHT });
+//       toast.info("Info Notification", { position: toast.POSITION.BOTTOM_LEFT });
+//       toast.success("Success Notification", { position: toast.POSITION.TOP_CENTER });
+//       toast.warning("Warning Notification", { position: toast.POSITION.BOTTOM_RIGHT });
+//       toast.error("Error Notification", { position: toast.POSITION.BOTTOM_CENTER });
+
+
+//    }
+//    return(
+//       <>
+//       <button onClick={toastFunction}>Toastify</button>
+//       <ToastContainer></ToastContainer>
+
+//       </>
+//    )
+// }
 
 
 
