@@ -5,7 +5,7 @@ function ReactBootsrapCard(props) {
   const {title,text,img}=props
   return (
     <Card >
-      <Card.Img variant="top" src={img} height={200}/>
+      <Card.Img variant="top" src={img} height={200} width={50}/>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{text}</Card.Text>

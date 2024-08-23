@@ -1,27 +1,13 @@
-import ReactBootsrapCard from "./reactBootsrap/reactBootsrapCard.jsx"
-import { data } from "./arrayOfObjects/data.js"
-import bootstrapFirstComponent from "./bootStrap/firstComponent.jsx"
-import BootstrapFirstComponent from "./bootStrap/firstComponent.jsx"
+import LoadingSpinner ,{LoadingCircleSpinner,LoadingHourglass} from "./spinnerLoaders/loadingSpinner"
 
 
 function Calling(){
-   return(
-      <>
-         <BootstrapFirstComponent/>
-
-      {/* {
-         data.map(eachData=>{
-            return(
-               // <ReactBootsrapCard title={eachData.name} text={eachData.hero}/>
-               
-            )
-         })
-      } */}
-      </>
-   )
-
+return(
+   <>
+   <LoadingSpinner/>
+   <LoadingCircleSpinner height={200} width={200} color={"red"}/>
+   <LoadingHourglass/>
+   </>
+)
 }
-
-
-
 export default Calling
