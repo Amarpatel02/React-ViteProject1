@@ -1,10 +1,10 @@
 
-import ClassFirstComponent from "./ClassComponents/classComponents"
+import MetricConversion from "./metricConversionTask/task1"
 
 function Calling(){
    return(
       <>
-      <ClassFirstComponent/>
+      <MetricConversion/>
       </>
    )
 
