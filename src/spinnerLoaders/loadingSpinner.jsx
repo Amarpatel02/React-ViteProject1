@@ -1,5 +1,7 @@
 
-import { ColorRing , RotatingLines, Hourglass} from "react-loader-spinner"
+import { ColorRing , RotatingLines, Hourglass,} from "react-loader-spinner"
+import React, { useState } from "react";
+import Heart from "react-animated-heart"
 
 let LoadingSpinner =()=>{
 return(
@@ -45,3 +47,14 @@ export let LoadingHourglass = ()=>{
         />
     )
 }
+
+
+export let HeartComponent =()=>{
+    const [isClick, setClick] = useState(false);
+    return (
+      <div className="App">
+        <Heart isClick={isClick} onClick={() => setClick(!isClick)} />
+      </div>
+    );
+}
+
