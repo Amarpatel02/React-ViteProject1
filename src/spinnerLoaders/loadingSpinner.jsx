@@ -34,7 +34,7 @@ export let LoadingCircleSpinner = (props)=>{
     )
 }
 
-export let LoadingHourglass = ()=>{
+export const LoadingHourglass = ()=>{
     return(
         <Hourglass
             visible={true}
