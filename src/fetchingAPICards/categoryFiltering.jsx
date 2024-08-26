@@ -7,7 +7,8 @@ class FetchingAPICards extends Component{
     state={
         products:[],
         category:[],
-        allItems:[]
+        allItems:[],
+        loader:true
     }
     componentDidMount(){
         this.fakeProducts();
@@ -69,6 +70,8 @@ class FetchingAPICards extends Component{
     render(){
         return(
             <>
+
+            
             {
                             this.state.category.map((btn)=>{
                                 return(
