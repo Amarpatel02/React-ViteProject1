@@ -8,7 +8,6 @@ class FetchingAPICards extends Component{
         products:[],
         category:[],
         allItems:[],
-        loader:true
     }
     componentDidMount(){
         this.fakeProducts();
