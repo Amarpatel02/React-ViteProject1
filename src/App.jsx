@@ -1,5 +1,5 @@
 
-import FetchingAPICards from "./fetchingAPICards/task1"
+import FetchingAPICards from "./fetchingAPICards/categoryFiltering"
 function Calling(){
    return(
       <>
