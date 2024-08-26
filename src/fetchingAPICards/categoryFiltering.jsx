@@ -73,14 +73,14 @@ class FetchingAPICards extends Component{
                             this.state.category.map((btn)=>{
                                 return(
                                     <>
-                                          <button onClick={()=>{this.buttonClickFunction(btn)}}>{btn}</button>
+                                          <button style={{backgroundColor:"#0b5ed7", border:"none", borderRadius:"5px", color:"white", margin:"5px"}} onClick={()=>{this.buttonClickFunction(btn)}}>{btn}</button>
                                     </>
                                 )
 
                             })
                         }
 
-            <div style={{display:"flex", flexWrap:"wrap",justifyContent:"space-between"}}>
+            <div style={{display:"flex", flexWrap:"wrap",justifyContent:"space-between" }}>
                         
             {
                 this.state.products.map((data)=>{
