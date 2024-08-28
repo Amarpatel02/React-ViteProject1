@@ -6,8 +6,8 @@ import FakeStoreAPIClass from "./fakestoreAPIClasses/fakestoreAPIClasses"
 function Calling(){
 return(
    <>
-   {/* <RecipeReadMoreTask/> */}
-   <FakeStoreAPIClass/>
+   <RecipeReadMoreTask/>
+   {/* <FakeStoreAPIClass/> */}
    </>
 )
 }
