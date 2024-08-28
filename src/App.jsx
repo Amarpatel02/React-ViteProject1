@@ -1,12 +1,13 @@
-import ReactBootsrapCard from "./recipeTask/card"
-import WheatherAPI from "./wheatherAPI"
+import RecipeReadMoreTask from "./recipeTask/recipeReadmore"
+
+import FakeStoreAPIClass from "./fakestoreAPIClasses/fakestoreAPIClasses"
 
 
 function Calling(){
 return(
    <>
-   <ReactBootsrapCard/>
-   <WheatherAPI/>
+   {/* <RecipeReadMoreTask/> */}
+   <FakeStoreAPIClass/>
    </>
 )
 }
