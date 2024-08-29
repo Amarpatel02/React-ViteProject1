@@ -1,10 +1,9 @@
-import FakeStoreAPIClass from "./fakestoreAPIClasses/fakestoreAPIClasses"
-import SetStateComponent from "./Hooks/setState/day1"
+import ButtonTask from "./Hooks/setState/buttonsTask"
 
 function Calling(){
 return(
    <>
-   <FakeStoreAPIClass/>
+   <ButtonTask/>
    </>
 )
 }
