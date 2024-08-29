@@ -1,13 +1,10 @@
-import RecipeReadMoreTask from "./recipeTask/recipeReadmore"
-
-import FakeStoreAPIClass from "./fakestoreAPIClasses/fakestoreAPIClasses"
+import NavBar from "./classNAV/classNAV"
 
 
 function Calling(){
 return(
    <>
-   {/* <RecipeReadMoreTask/> */}
-   <FakeStoreAPIClass/>
+   <NavBar/>
    </>
 )
 }
