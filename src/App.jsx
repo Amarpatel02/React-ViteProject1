@@ -1,13 +1,9 @@
-import RecipeReadMoreTask from "./recipeTask/recipeReadmore"
-
-import FakeStoreAPIClass from "./fakestoreAPIClasses/fakestoreAPIClasses"
-
+import SetStateComponent from "./Hooks/setState/day1"
 
 function Calling(){
 return(
    <>
-   <RecipeReadMoreTask/>
-   {/* <FakeStoreAPIClass/> */}
+   <SetStateComponent/>
    </>
 )
 }
