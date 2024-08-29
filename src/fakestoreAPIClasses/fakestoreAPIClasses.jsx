@@ -1,66 +1,62 @@
 import axios from "axios";
 import { Component } from "react";
-import ReactBootsrapCard from "../recipeTask/card";
+import ReactBootsrapCard from "../recipeTask/card"; 
+class FakeStoreAPIClass extends Component {
+    state = {
+        fetchedData: [],
+        selectedProduct: null
+    };
 
-
-
-
-
-
-
-
-class FakeStoreAPIClass extends Component{
-
-    state={
-        fetchedData:[],
-        selectedProduct:null
-    }
-    
-
-    componentDidMount(){
-        this.apiCalling()
+    componentDidMount() {
+        this.apiCalling();
     }
 
-
-    productFunCalling = (each)=>{
+    productFunCalling = (each) => {
         this.setState({
-            selectedProduct:each
-        })
-    }
+            selectedProduct: each
+        });
+    };
 
+    apiCalling = async () => {
+        let { data, status } = await axios.get("https://fakestoreapi.com/products");
 
-
-    apiCalling = async ()=>{
-        let {data,status} = await axios.get("https://fakestoreapi.com/products")
-
-        if(status==200){
+        if (status === 200) {
             this.setState({
-                fetchedData:data
-            })
+                fetchedData: data
+            });
         }
+    };
+
+    render() {
+        return (
+            <div className="d-flex justify-content-between" style={{ width: '100%' }}>
+                <div className="product-list d-flex flex-wrap" style={{ width: '60%' }}>
+                    {this.state.fetchedData.map((each) => {
+                        return (
+                            <div key={each.id} >
+                                <ReactBootsrapCard
+                                    img={each.image}
+                                    title={each.title}
+                                    text={each.description}
+                                    onClick={() => { this.productFunCalling(each); }}
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {this.state.selectedProduct && (
+                    <div className="selected-product" style={{ width: '35%' }}>
+                        <ReactBootsrapCard
+                            img={this.state.selectedProduct.image}
+                            title={this.state.selectedProduct.title}
+                            text={this.state.selectedProduct.description}
+                        />
+                    </div>
+                )}
+            </div>
+        );
     }
-
-    render(){
-        return(
-            <>
-            {
-                this.state.fetchedData.map((each)=>{
-                    return(
-                        <>
-                        <ReactBootsrapCard img={each.image} title={each.title} text={each.description} onClick={()=>{this.productFunCalling(each)}} />
-                        </>
-                    )
-                })
-            }
-
-            {
-                this.state.selectedProduct &&(<ReactBootsrapCard img={this.state.selectedProduct.image} title={this.state.selectedProduct.title} text={this.state.selectedProduct.description}/>)
-            }
-
-
-            </>
-        )
-    }
-
 }
-export default FakeStoreAPIClass
+
+export default FakeStoreAPIClass;
