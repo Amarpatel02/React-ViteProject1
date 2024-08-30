@@ -35,18 +35,19 @@ fetchData = async()=>{
         }
 
 
-        addFunction = ()=>{
-          const  myObject = {
-                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-                "price": 109.95,
-                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-            }
-
-            this.setState((prevState)=>({
-                data:[myObject, ...prevState.data]
-            }))
+        addFunction = () => {
+            const { data } = this.state;
         
+            if (data.length === 0) return;  
+        
+            
+            const randomIndex = Math.floor(Math.random() * data.length);
+            const randomItem = data[randomIndex];
+            this.setState((prevState) => ({
+                data: [randomItem, ...prevState.data]
+            }));
         }
+        
         handleRemove=(id)=>{
        const filterdata= this.state.data.filter((val)=>{
          return val.id !== id
