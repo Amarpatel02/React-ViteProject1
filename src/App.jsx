@@ -1,9 +1,9 @@
-import UncontrolledInput from "./Hooks/useRef/uncontrolled"
+import ControlledFormTask from "./Hooks/useRef/controlledFrom"
 
 function Calling(){
 return(
    <>
-   <UncontrolledInput/>
+   <ControlledFormTask/>
    </>
 )
 }
