@@ -47,7 +47,12 @@ fetchData = async()=>{
             }))
         
         }
-
+        handleRemove=(id)=>{
+       const filterdata= this.state.data.filter((val)=>{
+         return val.id !== id
+       })
+       this.setState({data:filterdata})
+        }
 
     render(){
         return(
@@ -69,8 +74,8 @@ fetchData = async()=>{
 
                 </div>
                 {
-                    this.state.active && (<div style={{width:"80%", height:"500px"}}>
-                    <TableComponent data={this.state.data}/>
+                    this.state.active && (<div style={{width:"80%", height:"500px", overflow:"auto"}}>
+                    <TableComponent data={this.state.data}  handleRemove={this.handleRemove}/>
                     </div>)
                 }
             </div>

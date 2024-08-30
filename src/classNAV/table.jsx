@@ -3,7 +3,7 @@ import { Component } from "react";
 
 class TableComponent extends Component{
     render(){
-        const {data}=this.props
+        const {data,handleRemove}=this.props
         return(
             <>
             <table className="table table-condensed">
@@ -22,6 +22,7 @@ class TableComponent extends Component{
                     <td><img src={each.image} alt="" style={{height:"100px"}} /></td>
                     <td>{each.title}</td>
                     <td>{each.price}</td>
+                    <td><button style={{border:"none"}} onClick={()=>handleRemove(each.id)}>remove</button></td>
                     </tr>
                  )
     
@@ -32,16 +33,6 @@ class TableComponent extends Component{
       <td></td>
       <td></td>
     </tr>
-    {/* <tr>
-      <td>Mary</td>
-      <td>Moe</td>
-      <td>mary@example.com</td>
-    </tr>
-    <tr>
-      <td>July</td>
-      <td>Dooley</td>
-      <td>july@example.com</td>
-    </tr> */}
   </tbody>
 </table>
 
