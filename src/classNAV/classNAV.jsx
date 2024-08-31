@@ -39,8 +39,6 @@ fetchData = async()=>{
             const { data } = this.state;
         
             if (data.length === 0) return;  
-        
-            
             const randomIndex = Math.floor(Math.random() * data.length);
             const randomItem = data[randomIndex];
             this.setState((prevState) => ({
