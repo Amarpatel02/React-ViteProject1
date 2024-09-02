@@ -1,9 +1,11 @@
-import ControlledFormTask from "./Hooks/useRef/controlledFrom"
+import UseEffectFakeStoreApi from "./Hooks/useEffect/example"
+import SingleStateForm from "./Hooks/useRef/singleStateForm"
 
 function Calling(){
 return(
    <>
-   <ControlledFormTask/>
+   <SingleStateForm/>
+   <UseEffectFakeStoreApi/>
    </>
 )
 }
