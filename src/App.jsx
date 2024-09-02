@@ -1,9 +1,9 @@
-import UseEffectFakeStoreApi from "./Hooks/useEffect/example"
+import NavFormTask from "./Tasks/formTask"
 
 function Calling(){
 return(
    <>
-   <UseEffectFakeStoreApi/>
+   <NavFormTask/>
    </>
 )
 }
