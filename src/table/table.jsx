@@ -1,27 +1,33 @@
 
 
-const TableReuseableComponent = ()=>{
-    return(
-        <>
-        <table className="table table-striped">
-  <thead>
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>John</td>
-      <td>Doe</td>
-      <td>john@example.com</td>
-    </tr>
-  </tbody>
-</table>
+const TableReuseableComponent = ({ data = [] }) => {
+  return (
+    <>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            data.map((each) => {
+              return (
+                <tr>
+                  <td>{each.username}</td>
+                  <td>{each.email}</td>
+                  <td>{each.phone}</td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
 
-        </>
-    )
+    </>
+  )
 }
 
 export default TableReuseableComponent

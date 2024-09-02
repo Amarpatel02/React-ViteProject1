@@ -1,5 +1,7 @@
 import { useState } from "react"
 import TableReuseableComponent from "./tableComponent"
+import { indianStates } from "../jsHelper"
+import { emailRegex, mobileRegex } from "../../validationsRegex"
 
 
 
@@ -11,8 +13,16 @@ const SingleStateForm = () => {
         username:"",
         email:"",
         password:"",
+        mobileNumber:"",
         state:""
     })
+
+    let [inputErrors,setInputErrors]=useState({
+        usernameErr:"",
+        emailErr:"",
+        mobileNumberErr:""
+    })
+
 
     let [submitedData,setSubmitedData]=useState([])
 
@@ -20,6 +30,9 @@ const SingleStateForm = () => {
 
         const{name,value}=event.target
         console.log(name,value)
+        validationsFun(value,name)
+
+
 
         setUserData({...userData,[name]:value})
 
@@ -27,9 +40,12 @@ const SingleStateForm = () => {
 
     const onSubmit = (event)=>{
         event.preventDefault()
-        setSubmitedData([...submitedData,userData])
 
-        userData({
+        if(userData.username && userData.email && userData.mobileNumber && userData.password ){
+            setSubmitedData([...submitedData,userData])
+        }
+
+        setUserData({
         username:"",
         email:"",
         password:"",
@@ -38,7 +54,38 @@ const SingleStateForm = () => {
     }
 
 
+    const validationsFun = (value,name)=>{
 
+        let errors = {}
+        if(name=="username"){
+            console.log(name,value,'inside if');
+            if(!value){
+                errors.usernameErr = "Please Enter your Username"
+            }
+            else if(value.length<4||value.length>15){
+                errors.usernameErr = "Username should be between 4 and 15 characters";
+            }
+        }
+        if(name=="email"){
+            if(!value){
+                errors.emailErr = "Please Enter your Username"
+            }
+            else if(!emailRegex.test(value)){
+                errors.emailErr = "Please Enter a valid Email";
+            }
+        }
+
+        if(name=="mobileNumber"){
+            if(!value){
+                errors.mobileNumberErr = "Please Enter your MobileNumber"
+            }
+            else if (!mobileRegex.test(value)){
+                errors.mobileNumberErr = "Invalid Mobile Number"
+            }
+        }
+        setInputErrors(errors)
+    }
+    
     return (
         <>
             <div style={{width:"40%",marginLeft:"30%"}}>
@@ -51,8 +98,7 @@ const SingleStateForm = () => {
                            onChange={userInputsFun}
                            value={userData.username}
                            />
-
-
+                         {inputErrors?.usernameErr&& <small style={{color:'red'}}> {inputErrors?.usernameErr}</small>}<br></br>
                         <label htmlFor="exampleInputEmail1" className="form-label"> 
                             Email address
                         </label>
@@ -65,6 +111,7 @@ const SingleStateForm = () => {
                             onChange={userInputsFun}
                             value = {userData.email}
                         />
+                        
                         <div id="emailHelp" className="form-text">
                             We'll never share your email with anyone else.
                         </div>
@@ -83,12 +130,34 @@ const SingleStateForm = () => {
                         />
                     </div>
 
+                    <div className="mb-4">
+                        <label htmlFor="exampleInputPassword1" className="form-label">
+                            Mobile Number
+                        </label>
+                        <input
+                            type="number"
+                            className="form-control"
+                            id="exampleInputPassword1"
+                            name="mobileNumber"
+                            onChange={userInputsFun}
+                            value={userData.mobileNumber}
+                        />
+                {inputErrors.mobileNumberErr && <small style={{color:'red'}}>{inputErrors.mobileNumberErr}</small>}
+
+                    </div>
+
+
+
+
                     <select name="state" id=""className="form-control" onChange={userInputsFun} value={userData.state}>State
                                 <option value="">--Select Your State--</option>
-                                <option value="Telangana">Telangana</option>
-                                <option value="AndhraPradesh">AndhraPradesh</option>
-                                <option value="maharastra">Maharastra</option>
-                                <option value="kerala">Kerala</option>
+                                {
+                                    indianStates.map((each)=>{
+                                        return(
+                                        <option value={each}>{each}</option>
+                                        )
+                                    })
+                                }
                     </select>
 
                     <div className="mb-3 form-check">
@@ -101,8 +170,9 @@ const SingleStateForm = () => {
                         Submit
                     </button>
                 </form>
-                <TableReuseableComponent rowData={submitedData}/>
+                <TableReuseableComponent rowData={submitedData} setSubmitedData={setSubmitedData}/>
             {/* <h3>Entered email: {email}</h3> */}
+
             </div>
         </>
     )

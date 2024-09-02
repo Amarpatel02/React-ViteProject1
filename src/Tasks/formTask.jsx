@@ -6,10 +6,16 @@ import SingleStateForm from "../Hooks/useRef/singleStateForm"
 const NavFormTask = ()=>{
 
     const [showTable,setShowTable]=useState(false)
+    const [homeComponent ,setHomeComponent]= useState(false)
 
     const formComponentFun =()=>{
             setShowTable(!showTable)
         
+    }
+    const homeClick = ()=>{
+        return(
+            setHomeComponent(!homeComponent)
+        )
     }
 
 return(
@@ -22,12 +28,15 @@ return(
 
                 <div style={{width:"80%", height:"100px", marginLeft:"10%", display:"flex"}}>
                 <div style={{width:"20%", height:"500px"}}>
-                    <button style={{width:"100px", border:"none", margin:"10px"}}>Home</button> <br />
+                    <button style={{width:"100px", border:"none", margin:"10px"}} onClick={homeClick}>Home</button> <br />
                     <button style={{width:"100px",border:"none" ,margin:"10px"}}>About</button> <br />
                     <button style={{width:"100px",border:"none",margin:"10px"}}>Contact</button> <br />
                     <button style={{width:"100px",border:"none",margin:"10px"}} onClick={formComponentFun}>{showTable?"Remove Form":"Add Form"}</button>
                 </div>
                   <div style={{width:"80%", height:"500px", overflow:"auto"}}>
+                    {
+                        homeComponent && <SingleStateForm/>
+                    }
                     {
                        showTable && <SingleStateForm/>
                     }

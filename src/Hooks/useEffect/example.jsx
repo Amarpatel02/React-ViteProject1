@@ -1,5 +1,4 @@
 import axios from "axios"
-import { Button } from "bootstrap"
 import { useEffect } from "react"
 import { useState } from "react"
 import ReusableCard from "../../ReuseableCards/resuseableCard"
@@ -14,6 +13,8 @@ const UseEffectFakeStoreApi = ()=>{
     const [data,setData]=useState([])
     const [endPoints,setEndPoints]=useState("products")
 
+    const [active,setActive]=useState("")
+
     useEffect(()=>{
         fetchdata()
         console.log("useEffect Called")
@@ -21,6 +22,7 @@ const UseEffectFakeStoreApi = ()=>{
 
    const endPointsFun =(event)=>{
         setEndPoints(event)
+        setActive(event)
     }
 
     const fetchdata = async()=>{
@@ -40,12 +42,12 @@ const UseEffectFakeStoreApi = ()=>{
         <>
         {
             ["products","carts","users"].map((each)=>{ return(
-               <button onClick={()=>{endPointsFun(each)}}>{each}</button>
+               <button type="button" class="btn btn-primary" style={{margin:".50rem"}} onClick={()=>{endPointsFun(each)}}>{each}</button>
             )})
         }
-        <h3>{endPoints}</h3>
-        <ReusableCard data={data}/>
-        <TableReuseableComponent/>
+        {active === "products" &&<ReusableCard data={data}/>}
+        {active==="users"&& <TableReuseableComponent data ={data}/> }
+        
         </>        
 
     )

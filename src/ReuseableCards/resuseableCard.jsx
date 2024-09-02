@@ -4,12 +4,12 @@
 
 const ReusableCard = ({ data = [] }) => {
     return (
-        <>
+        <div style={{display:"flex",flexWrap:"wrap",justifyContent:"space-between"}}>
             {
                 data.map((each) => {
                     return (
-                        <div className="card" style={{ width: "18rem" }}>
-                            <img src={each.image} className="card-img-top" alt="..." height={200} width={100}/>
+                        <div className="card" style={{ width: "22rem" }}>
+                            <img src={each.image} className="card-img-top" alt="..." style={{ height: "200px", width: "18rem", marginLeft:"2rem"}}  />
                             <div className="card-body">
                                 <h5 className="card-title">{each.title}</h5>
                                 <p className="card-text">
@@ -25,7 +25,7 @@ const ReusableCard = ({ data = [] }) => {
                 })
             }
 
-        </>
+        </div>
     )
 }
 
