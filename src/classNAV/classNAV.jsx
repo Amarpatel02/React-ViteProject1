@@ -63,14 +63,12 @@ fetchData = async()=>{
 
                 </div>
 
-            <div style={{width:"80%", height:"100px", marginLeft:"10%", display:"flex"}}>
+               <div style={{width:"80%", height:"100px", marginLeft:"10%", display:"flex"}}>
                 <div style={{width:"20%", height:"500px"}}>
                     <button style={{width:"100px", border:"none", margin:"10px"}} onClick={this.homeFunction}>Home</button> <br />
                     <button style={{width:"100px",border:"none" ,margin:"10px"}}>About</button> <br />
                     <button style={{width:"100px",border:"none",margin:"10px"}}>Contact</button> <br />
                     <button style={{width:"100px",border:"none",margin:"10px"}} onClick={this.addFunction}>Add Item</button>
-
-
                 </div>
                 {
                     this.state.active && (<div style={{width:"80%", height:"500px", overflow:"auto"}}>

@@ -1,44 +1,28 @@
 
-export function OrderedList(){
-    return (
-    
-       <ol> <List></List></ol>
-    )
-};
 
 
-export function UnOrderList(){
+
+
+const ReuseableTableComponent = ()=>{
     return(
-        <ul><List></List></ul>
-    )
-}
-
-
-
-let arr = ["Amar","Ramu","sai","Charan","Kranthi","sagar"]
- const List =()=>{
-    return (
         <>
-        {/* // <li>Amar</li>
-        // <li>Sai</li>
-        // <li>Ram</li> */}
-       { arr.map((data)=>{
-
-       return <li>{data}</li>
-
-        })}
-
-         </>
-        
+        <table className="table table-striped">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>Doe</td>
+      <td>john@example.com</td>
+    </tr>
+  </tbody>
+</table>
+</>
     )
 }
-
-
-
-//  export let Card = ()=>{
-//     return(
-//         <div>
-//         <img src ="https://filmfare.wwmindia.com/content/2020/apr/baahubali2facts11588076005.jpg" className="img" height={220} width={200}/>
-//         </div>
-//     )
-// }
+export default ReuseableTableComponent

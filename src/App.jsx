@@ -1,10 +1,10 @@
-import NavBar from "./classNAV/classNAV"
+import NavFormTask from "./NavFormTask/navForm"
 
 
 function Calling(){
 return(
    <>
-   <NavBar/>
+   <NavFormTask/>
    </>
 )
 }
