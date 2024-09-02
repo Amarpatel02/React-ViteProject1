@@ -3,6 +3,7 @@ import { Button } from "bootstrap"
 import { useEffect } from "react"
 import { useState } from "react"
 import ReusableCard from "../../ReuseableCards/resuseableCard"
+import TableReuseableComponent from "../../table/table"
 
 
 
@@ -44,6 +45,7 @@ const UseEffectFakeStoreApi = ()=>{
         }
         <h3>{endPoints}</h3>
         <ReusableCard data={data}/>
+        <TableReuseableComponent/>
         </>        
 
     )
