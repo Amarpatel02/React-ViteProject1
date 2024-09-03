@@ -1,15 +1,33 @@
 
+
+
+
+
+
+
+
 import { useState } from "react"
 import SingleStateForm from "../Hooks/useRef/singleStateForm"
+import TableReuseableComponent from "../table/table"
+import Model from "../model/model"
 
 
-const NavFormTask = ()=>{
+
+const TaskOne = ()=>{
 
     const [showTable,setShowTable]=useState(false)
+    const [homeButton ,setHomeButton]=useState(false)
+
 
     const formComponentFun =()=>{
             setShowTable(!showTable)
         
+    }
+
+    const homeFun = ()=>{
+
+            setHomeButton(!homeButton)
+
     }
 
 return(
@@ -22,17 +40,20 @@ return(
 
                 <div style={{width:"80%", height:"100px", marginLeft:"10%", display:"flex"}}>
                 <div style={{width:"20%", height:"500px"}}>
-                    <button style={{width:"100px", border:"none", margin:"10px"}}>Home</button> <br />
+                    <button style={{width:"100px", border:"none", margin:"10px"}} onClick={homeFun} >Home</button> <br />
                     <button style={{width:"100px",border:"none" ,margin:"10px"}}>About</button> <br />
                     <button style={{width:"100px",border:"none",margin:"10px"}}>Contact</button> <br />
                     <button style={{width:"100px",border:"none",margin:"10px"}} onClick={formComponentFun}>{showTable?"Remove Form":"Add Form"}</button>
                 </div>
                   <div style={{width:"80%", height:"500px", overflow:"auto"}}>
 
-                    
+                
+                {
+                    homeButton && <TableReuseableComponent/>
+                }
                     
                     {
-                       showTable && <SingleStateForm/>
+                       showTable && <Model/>
                     }
                     </div>
                 </div>
@@ -40,4 +61,4 @@ return(
     </>
 )
 }
-export default NavFormTask
+export default TaskOne

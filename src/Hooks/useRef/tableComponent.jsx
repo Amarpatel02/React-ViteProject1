@@ -10,6 +10,7 @@ const TableReuseableComponent = ({rowData=[],setSubmitedData}) => {
     
     }
     return (
+        
         <>
             <table className="table table-striped">
                 <thead>

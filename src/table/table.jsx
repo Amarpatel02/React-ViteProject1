@@ -6,12 +6,20 @@ const TableReuseableComponent = ({ data = [] }) => {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>UserName</th>
-            <th>Email</th>
-            <th>PhoneNumber</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>MobileNumber</th>
+          <th>State</th>
           </tr>
         </thead>
         <tbody>
+
+          <tr>
+            <td>Amar</td>
+            <td>amarchinna02@gmail.com</td>
+            <td>9963118136</td>
+            <td>Telangana</td>
+          </tr>
           {
             data.map((each) => {
               return (
