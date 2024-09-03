@@ -1,11 +1,6 @@
 
 
 
-
-
-
-
-
 const TableReuseableComponent = ({rowData=[],setSubmitedData}) => {
 
     const handleRemove=(id)=>{
