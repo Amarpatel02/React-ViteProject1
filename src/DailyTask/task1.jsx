@@ -10,6 +10,7 @@ import { useState } from "react"
 import SingleStateForm from "../Hooks/useRef/singleStateForm"
 import TableReuseableComponent from "../table/table"
 import Model from "../model/model"
+import { NavLink } from "react-router-dom"
 
 
 
@@ -30,6 +31,10 @@ const TaskOne = ()=>{
 
     }
 
+    const styling = {
+        textDecoration:"none"
+    }
+
 return(
      <>
                      <div style={{width:"80%", height:"100px", marginLeft:"10%", display:"flex", justifyContent:"space-between", alignItems:"center", position:"sticky",top:"10",backgroundColor:"white",zIndex: "1000"}}>
@@ -40,10 +45,10 @@ return(
 
                 <div style={{width:"80%", height:"100px", marginLeft:"10%", display:"flex"}}>
                 <div style={{width:"20%", height:"500px"}}>
-                    <button style={{width:"100px", border:"none", margin:"10px"}} onClick={homeFun} >Home</button> <br />
-                    <button style={{width:"100px",border:"none" ,margin:"10px"}}>About</button> <br />
-                    <button style={{width:"100px",border:"none",margin:"10px"}}>Contact</button> <br />
-                    <button style={{width:"100px",border:"none",margin:"10px"}} onClick={formComponentFun}>{showTable?"Remove Form":"Add Form"}</button>
+                    <button style={{width:"100px", border:"none", margin:"10px"}} onClick={homeFun} > <NavLink to={"/"} style={styling} >Home</NavLink></button> <br />
+                    <button style={{width:"100px",border:"none",margin:"10px"}} ><NavLink to={"/about"} style={styling}>About</NavLink></button> <br />
+                    <button style={{width:"100px",border:"none",margin:"10px"}}> <NavLink to={"/contact"} style={styling}>Contact</NavLink ></button> <br />
+                    <button style={{width:"100px",border:"none",margin:"10px"}} onClick={formComponentFun}><NavLink to={"/add"} style={styling}>{showTable?"Remove Form":"Add Form"}</NavLink></button>
                 </div>
                   <div style={{width:"80%", height:"500px", overflow:"auto"}}>
 

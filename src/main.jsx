@@ -5,14 +5,17 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigations from './navigations/navigation.jsx';
 import { BrowserRouter } from 'react-router-dom';
+import NavigationsTask from './DailyTask/navigation.jsx';
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <Calling /> */}
+
     <BrowserRouter>
-          <Navigations/>
+    {/* <Calling /> */}
+    <NavigationsTask/>
+          {/* <Navigations/> */}
     </BrowserRouter>
   </React.StrictMode>,
 )

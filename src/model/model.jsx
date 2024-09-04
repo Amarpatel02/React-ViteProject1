@@ -8,6 +8,7 @@ const Model = ()=>{
     return(
         <>
 <>
+ <Dialog/>
   <div className="container mt-3">
     <h3>Modal Example</h3>
     <p>Click on the button to open the modal.</p>
