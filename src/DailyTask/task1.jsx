@@ -9,8 +9,8 @@
 import { useState } from "react"
 import SingleStateForm from "../Hooks/useRef/singleStateForm"
 import TableReuseableComponent from "../table/table"
-import Model from "../model/model"
 import { NavLink } from "react-router-dom"
+import ModelComponent from "../model/model"
 
 
 
@@ -48,7 +48,7 @@ return(
                     <button style={{width:"100px", border:"none", margin:"10px"}} onClick={homeFun} > <NavLink to={"/"} style={styling} >Home</NavLink></button> <br />
                     <button style={{width:"100px",border:"none",margin:"10px"}} ><NavLink to={"/about"} style={styling}>About</NavLink></button> <br />
                     <button style={{width:"100px",border:"none",margin:"10px"}}> <NavLink to={"/contact"} style={styling}>Contact</NavLink ></button> <br />
-                    <button style={{width:"100px",border:"none",margin:"10px"}} onClick={formComponentFun}><NavLink to={"/add"} style={styling}>{showTable?"Remove Form":"Add Form"}</NavLink></button>
+                    <button style={{width:"100px",border:"none",margin:"10px"}} onClick={formComponentFun}><NavLink style={styling}>{showTable?"Remove Form":"Add Form"}</NavLink></button>
                 </div>
                   <div style={{width:"80%", height:"500px", overflow:"auto"}}>
 
@@ -57,9 +57,10 @@ return(
                     homeButton && <TableReuseableComponent/>
                 }
                     
-                    {
-                       showTable && <Model/>
-                    }
+                {
+                    showTable && <ModelComponent/>
+                }
+                    
                     </div>
                 </div>
 
