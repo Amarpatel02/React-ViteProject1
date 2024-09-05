@@ -12,10 +12,10 @@ import NavigationsTask from './DailyTask/navigation.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
-    <BrowserRouter>
-    {/* <Calling /> */}
-    <NavigationsTask/>
+    {/* <BrowserRouter> */}
+    <Calling />
+    {/* <NavigationsTask/> */}
           {/* <Navigations/> */}
-    </BrowserRouter>
+    {/* </BrowserRouter> */}
   </React.StrictMode>,
 )

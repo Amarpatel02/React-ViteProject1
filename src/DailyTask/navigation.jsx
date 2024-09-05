@@ -12,12 +12,14 @@ import ContactPage from "./contactPage"
 const NavigationsTask = ()=>{
     return(
         <>
+        <BrowserRouter>
            <Routes>
                 <Route path="/" element={<TaskOne/>}/>
                 <Route path="/add" element={<Model/>}/>
                 <Route path="/about" element={<AboutPage/>}/>
                 <Route path="/contact" element={<ContactPage/>}/>
            </Routes>
+        </BrowserRouter>
            </>
     )
 }
