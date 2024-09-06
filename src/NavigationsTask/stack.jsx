@@ -9,15 +9,31 @@ import WomensPage from "./womens"
 import AboutPage from "./aboutPage"
 import SingleProduct from "./singleProduct"
 import HomePageComponent from "./homePage"
+import { createContext } from "react"
+import { useState } from "react"
 
 
 
 
-
+   export const GlobalStateManagement = createContext()
 
 
 const NavigationsTask1 = ()=>{
+
+    const [username,setUsername] = useState("Amar")
+
+    const [darkTheme,setDarkTheme]=useState(false)
+
+    const themeHandler = ()=>{
+        setDarkTheme(!darkTheme)
+    }
+
     return(
+        <GlobalStateManagement.Provider value={{
+            username:"Amar",
+            darkTheme:darkTheme,
+            themeHandler
+        }}>
             <BrowserRouter>
                  <Routes>
                     <Route path="/" element={<HomePageComponent/>}/>
@@ -39,6 +55,7 @@ const NavigationsTask1 = ()=>{
                         
                  </Routes>
             </BrowserRouter>
+        </GlobalStateManagement.Provider>
     )
 }
 export default NavigationsTask1

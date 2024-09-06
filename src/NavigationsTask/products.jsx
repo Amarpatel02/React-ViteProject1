@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import ReusableCard from "../ReuseableCards/resuseableCard"
 import axios from "axios"
 import HomePage from "./navbar"
+import { GlobalStateManagement } from "./stack"
 
 
 
@@ -10,6 +11,8 @@ import HomePage from "./navbar"
 
 
 const ProductsPage = ()=>{
+
+    const {username} = useContext(GlobalStateManagement)
 
     const [data,useData]=useState([])
 
@@ -28,6 +31,7 @@ const ProductsPage = ()=>{
     return(
         <>
         <HomePage/>
+        <h3>Hello {username}</h3>
         <ReusableCard data={data}/>
         </>
     )

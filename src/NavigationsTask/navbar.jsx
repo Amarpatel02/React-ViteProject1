@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom"
 import HomePageComponent from "./homePage"
+import { useContext } from "react"
+import { GlobalStateManagement } from "./stack"
 
 
 
@@ -9,6 +11,9 @@ import HomePageComponent from "./homePage"
 
 const HomePage = ()=>{
 
+  const {darkTheme}=useContext(GlobalStateManagement)
+  console.log(darkTheme)
+
   const styling={
        marginLeft:"1rem",
        marginRight:"1rem",
@@ -17,7 +22,7 @@ const HomePage = ()=>{
 
     return(
         <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className={`navbar navbar-expand-lg navbar-light bg-${darkTheme?"white":"dark"}`}>
         <NavLink to={"/"} style={styling}>Home</NavLink>
   <button
     className="navbar-toggler"
