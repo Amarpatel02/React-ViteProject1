@@ -1,5 +1,6 @@
 import NavigationsTask from "./DailyTask/navigation"
 import TaskOne from "./DailyTask/task1"
+import UseReducerExample2 from "./Hooks/useReduce/useReduce"
 import UseReduceExample from "./Hooks/useReduce/useReducer"
 import Model from "./model/model"
 import NavigationsTask1 from "./NavigationsTask/stack"
@@ -14,7 +15,9 @@ return(
    {/* <TaskOne/> */}
    {/* <Model/> */}
 
-   <UseReduceExample/>
+   <UseReducerExample2/>
+
+   {/* <UseReduceExample/> */}
    </>
 )
 }

@@ -13,7 +13,7 @@ export const itemFunction = ()=>{
     }
     return data
 }
-console.log(itemFunction())
+// console.log(itemFunction())
 
 
 export const countries = [
