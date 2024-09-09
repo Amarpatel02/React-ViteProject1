@@ -5,7 +5,7 @@ import WheatherAPI from "./wheatherAPI"
 function Calling(){
 return(
    <>
-   <ReactBootsrapCard/>
+   {/* <ReactBootsrapCard/> */}
    <WheatherAPI/>
    </>
 )
