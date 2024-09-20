@@ -1,0 +1,6 @@
+
+
+
+
+export const BOOK_TICKETS = "BOOK_TICKETS"
+export const CANCEL_TICKETS = "CANCEL_TICKETS"
